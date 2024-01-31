@@ -1,11 +1,15 @@
-import { projectLists, Project, addProjectToList } from "./project";
+import {
+  projectLists,
+  Project,
+  addProjectToList,
+  displayProject,
+} from "./project";
 
 export default function Dom() {
   const addBtn = document.querySelector("#add");
   const cancelBtn = document.querySelector("#cancel");
   const addProject = document.querySelector("#add-project");
   const addInput = document.querySelector("#btn-input");
-  const projectDiv = document.querySelector("#projects");
   const projectTitle = document.querySelector("#project-name");
 
   //Step4: Add projects
@@ -16,18 +20,6 @@ export default function Dom() {
     //clear input value if any
     projectTitle.value = "";
   });
-
-  //Step8: function to display project array in the page
-  function displayProject() {
-    projectDiv.innerHTML = "";
-    projectLists.forEach((project) => {
-      let newDiv = `<div class="project-list">
-      <p class="p-title">${project.title}</p>
-      <img class="hide-bin" src="./images/delete.png" alt="delete" />
-    </div>`;
-      projectDiv.insertAdjacentHTML("beforeend", newDiv);
-    });
-  }
 
   //Step6: extract input info when "Add" button is clicked
   addBtn.addEventListener("click", (e) => {
@@ -54,3 +46,13 @@ export default function Dom() {
     addInput.classList.add("hide-btn-input");
   });
 }
+
+//Step10: delete default projects
+const deleteDefaultProject = document.querySelectorAll(".delete-default-bin");
+const defaultProjectList = document.querySelectorAll(".project-list");
+deleteDefaultProject.forEach((button, index) => {
+  button.addEventListener("click", function () {
+    const defaultProject = defaultProjectList[index];
+    defaultProject.remove();
+  });
+});
