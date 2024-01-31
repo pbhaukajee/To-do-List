@@ -4,8 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-Do-List</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <script src="bundle.js"></script>
+    <header>
+      <h1>To Do List</h1>
+    </header>
+    <main>
+      <nav>
+        <h2>Projects</h2>
+        <div id="default-projects">
+          <div class="project-list">
+            <p>Grocery</p>
+            <img class="hide-bin" src="./images/delete.png" alt="delete" />
+          </div>
+          <div class="project-list">
+            <p>Study</p>
+            <img class="hide-bin" src="./images/delete.png" alt="delete" />
+          </div>
+        </div>
+        <div id="projects"></div>
+        <button id="add-project">＋ Add Project</button>
+        <form action="/" method="get" id="btn-input" class="hide-btn-input">
+          <input type="text" id="project-name" />
+          <button id="add">Add</button>
+          <button id="cancel">Cancel</button>
+        </form>
+      </nav>
+    </main>
+    <script src="main.js"></script>
   </body>
 </html>
