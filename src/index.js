@@ -1,12 +1,3 @@
-import "./style.css";
+import Dom from "./modules/dom";
 
-function component() {
-  const element = document.createElement("div");
-
-  element.innerHTML = "Hello World";
-  element.classList.add("hello");
-
-  return element;
-}
-
-document.body.appendChild(component());
+Dom();
