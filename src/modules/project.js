@@ -1,10 +1,7 @@
-//is this necessary??
-import Dom from "./dom";
-
 //Step1:
 export const projectLists = [];
 
-//Step2: constructor
+//Step2: create constructor
 export function Project(title) {
   this.title = title;
 }
@@ -15,10 +12,13 @@ export function addProjectToList(title) {
   projectLists.push(newProject);
 }
 
-//Step8: function to display project array in the page
+//Step7: function to display project array in the page
 export function displayProject() {
   const projectDiv = document.querySelector("#projects");
+  //to avoid duplication of previously created div
   projectDiv.innerHTML = "";
+
+  //add new div to display
   projectLists.forEach((project, index) => {
     let newDiv = `<div class="project-list">
       <p class="p-title">${project.title}</p>
@@ -36,7 +36,7 @@ export function displayProject() {
   });
 }
 
-//Step9: function to delete the project
+//Step8: function to delete the project
 
 export function remove(index) {
   projectLists.splice(index, 1);

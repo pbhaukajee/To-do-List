@@ -1,28 +1,28 @@
-import {
-  projectLists,
-  Project,
-  addProjectToList,
-  displayProject,
-} from "./project";
-
+import { projectLists, addProjectToList, displayProject } from "./project";
+import { taskLists, tasks, addTaskToList, displayTask } from "./tasks";
 export default function Dom() {
-  const addBtn = document.querySelector("#add");
+  const addProjectBtn = document.querySelector("#add");
   const cancelBtn = document.querySelector("#cancel");
   const addProject = document.querySelector("#add-project");
-  const addInput = document.querySelector("#btn-input");
+  const addProjectInput = document.querySelector("#project-input");
   const projectTitle = document.querySelector("#project-name");
+  const addTask = document.querySelector(".add-task");
+  const addTaskInput = document.querySelector(".task-input");
+  const addTaskBtn = document.querySelector("#add-t");
+  const taskName = document.querySelector("#task-name");
+  const cancelTBtn = document.querySelector("#cancel-t");
 
   //Step4: Add projects
   addProject.addEventListener("click", function () {
     addProject.classList.add("hide-add-project");
-    addInput.classList.remove("hide-btn-input");
+    addProjectInput.classList.remove("hide-btn-input");
 
     //clear input value if any
     projectTitle.value = "";
   });
 
-  //Step6: extract input info when "Add" button is clicked
-  addBtn.addEventListener("click", (e) => {
+  //Step5: extract project input info when "Add" button is clicked
+  addProjectBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
     //Extract values from input
@@ -31,28 +31,63 @@ export default function Dom() {
       return false;
     } else {
       addProjectToList(title);
-      console.log("Project Lists:", projectLists);
       displayProject();
-      addInput.reset();
+      addProjectInput.reset();
       addProject.classList.remove("hide-add-project");
-      addInput.classList.add("hide-btn-input");
+      addProjectInput.classList.add("hide-btn-input");
     }
   });
 
-  //Step7: cancel
+  //Step6: cancel project
   cancelBtn.addEventListener("click", (e) => {
     e.preventDefault();
     addProject.classList.remove("hide-add-project");
-    addInput.classList.add("hide-btn-input");
+    addProjectInput.classList.add("hide-btn-input");
+  });
+
+  //Step9: delete default projects
+  const deleteDefaultProject = document.querySelectorAll(".delete-default-bin");
+  const defaultProjectList = document.querySelectorAll(".project-list");
+  deleteDefaultProject.forEach((button, index) => {
+    button.addEventListener("click", function () {
+      const defaultProject = defaultProjectList[index];
+      defaultProject.remove();
+    });
+  });
+
+  //Step10: Add tasks
+  addTask.addEventListener("click", function () {
+    addTask.classList.add("hide-add-task");
+    addTaskInput.classList.remove("hide-btn-input");
+
+    //clear input value if any
+    taskName.value = "";
+  });
+
+  //Step14: extract task input info when "Add" button is clicked
+  addTaskBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    //Extract from input values
+
+    let task = document.querySelector("#task-name").value;
+    let priority = document.querySelector("#priority").value;
+    let date = document.querySelector("#date").value;
+
+    if (task === "") {
+      return false;
+    } else {
+      addTaskToList(task, priority, date);
+      displayTask();
+      addTaskInput.reset();
+      addTask.classList.remove("hide-add-task");
+      addTaskInput.classList.add("hide-btn-input");
+    }
+  });
+  //Step16: cancel task
+  cancelTBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    addTask.classList.remove("hide-add-task");
+    addTaskInput.classList.add("hide-btn-input");
   });
 }
-
-//Step10: delete default projects
-const deleteDefaultProject = document.querySelectorAll(".delete-default-bin");
-const defaultProjectList = document.querySelectorAll(".project-list");
-deleteDefaultProject.forEach((button, index) => {
-  button.addEventListener("click", function () {
-    const defaultProject = defaultProjectList[index];
-    defaultProject.remove();
-  });
-});

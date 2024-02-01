@@ -36,11 +36,17 @@ h1 {
   font-size: 48px;
 }
 
+/* main */
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
 /* nav bar */
 
 nav {
   padding: 20px;
-  width: 250px;
+  width: 18vw;
   height: 100vh;
   border-right: 1px solid rgba(151, 145, 145, 0.263);
 }
@@ -84,14 +90,88 @@ input {
   margin-top: 10px;
 }
 
-.hide-btn-input {
+.hide-btn-input,
+.hide-add-project,
+.hide-add-task {
   display: none;
 }
 
-.hide-add-project {
-  display: none;
-}
-
-.p-title {
+.p-title,
+.t-title {
   text-transform: capitalize;
+}
+
+.hide-bin,
+.hide-cross {
+  opacity: 0;
+}
+
+.project-list:hover .hide-bin {
+  opacity: 1;
+}
+
+.task-list:hover .hide-cross {
+  opacity: 1;
+}
+
+.tasks-area {
+  width: 82vw;
+}
+
+.add-task {
+  margin: 30px;
+  font-weight: bold;
+  font-size: 16px;
+  width: 200px;
+  border: none;
+  background-color: rgb(242, 242, 237);
+}
+
+/* task area */
+.task-input {
+  padding-left: 80px;
+  padding-top: 50px;
+}
+
+.flex-div {
+  display: flex;
+  gap: 15px;
+}
+
+.input-task {
+  width: 500px;
+}
+
+.tasks {
+  margin-top: 50px;
+}
+
+.task-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 70px;
+  margin-top: 20px;
+  margin-right: 150px;
+}
+
+.task-left,
+.task-right {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 30px;
+}
+
+.cross-bin {
+  width: 15px;
+  height: 15px;
+}
+
+#check-box {
+  width: 15px;
+}
+
+input[type="checkbox"] {
+  accent-color: green;
 }

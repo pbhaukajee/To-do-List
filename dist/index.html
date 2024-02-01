@@ -33,12 +33,32 @@
         </div>
         <div id="projects"></div>
         <button id="add-project">＋ Add Project</button>
-        <form action="/" method="get" id="btn-input" class="hide-btn-input">
+        <form action="/" method="get" id="project-input" class="hide-btn-input">
           <input type="text" id="project-name" />
           <button id="add">Add</button>
           <button id="cancel">Cancel</button>
         </form>
       </nav>
+      <div class="tasks-area">
+        <div class="tasks"></div>
+        <button class="add-task">＋ Add Task</button>
+        <form class="task-input hide-btn-input" action="/" method="get">
+          <div class="flex-div">
+            <input class="input-task" type="text" id="task-name" />
+            <select name="priority" id="priority">
+              <optgroup label="Priority">
+                <option>Low</option>
+                <option>High</option>
+              </optgroup>
+            </select>
+            <input type="date" id="date" />
+          </div>
+          <div class="flex-div">
+            <button id="add-t">Add</button>
+            <button id="cancel-t">Cancel</button>
+          </div>
+        </form>
+      </div>
     </main>
     <script src="main.js"></script>
   </body>
