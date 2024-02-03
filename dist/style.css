@@ -96,8 +96,7 @@ input {
   display: none;
 }
 
-.p-title,
-.t-title {
+p {
   text-transform: capitalize;
 }
 
@@ -153,6 +152,7 @@ input {
   margin-left: 70px;
   margin-top: 20px;
   margin-right: 150px;
+  cursor: pointer;
 }
 
 .task-left,
@@ -174,4 +174,8 @@ input {
 
 input[type="checkbox"] {
   accent-color: green;
+}
+
+.active-list {
+  color: red;
 }

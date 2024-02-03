@@ -16,7 +16,7 @@ export function displayTask() {
     let newDiv = `<div class="task-list">
     <div class="task-left">
     <input type="checkbox" id="check-box" >
-    <p class="t-title">${task.taskName}</p>
+    <p>${task.taskName}</p>
     <p class="t-priority">${task.priorityScale}</p>
     </div>
     <div class="task-right">

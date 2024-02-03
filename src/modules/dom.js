@@ -1,5 +1,6 @@
-import { projectLists, addProjectToList, displayProject } from "./project";
-import { taskLists, tasks, addTaskToList, displayTask } from "./tasks";
+import { addProjectToList, saveAndDisplay } from "./project";
+
+import { addTaskToList, displayTask } from "./tasks";
 export default function Dom() {
   const addProjectBtn = document.querySelector("#add");
   const cancelBtn = document.querySelector("#cancel");
@@ -8,8 +9,9 @@ export default function Dom() {
   const projectTitle = document.querySelector("#project-name");
   const addTask = document.querySelector(".add-task");
   const addTaskInput = document.querySelector(".task-input");
-  const addTaskBtn = document.querySelector("#add-t");
   const taskName = document.querySelector("#task-name");
+  const addTaskBtn = document.querySelector("#add-t");
+
   const cancelTBtn = document.querySelector("#cancel-t");
 
   //Step4: Add projects
@@ -31,8 +33,8 @@ export default function Dom() {
       return false;
     } else {
       addProjectToList(title);
-      displayProject();
-      addProjectInput.reset();
+      saveAndDisplay();
+      title = "";
       addProject.classList.remove("hide-add-project");
       addProjectInput.classList.add("hide-btn-input");
     }
@@ -56,7 +58,8 @@ export default function Dom() {
   });
 
   //Step10: Add tasks
-  addTask.addEventListener("click", function () {
+  addTask.addEventListener("click", function (e) {
+    e.preventDefault();
     addTask.classList.add("hide-add-task");
     addTaskInput.classList.remove("hide-btn-input");
 
