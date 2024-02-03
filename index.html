@@ -13,24 +13,6 @@
     <main>
       <nav>
         <h2>Projects</h2>
-        <div id="default-projects">
-          <div class="project-list">
-            <p>Grocery</p>
-            <img
-              class="delete-default-bin hide-bin"
-              src="./images/delete.png"
-              alt="delete"
-            />
-          </div>
-          <div class="project-list">
-            <p>Study</p>
-            <img
-              class="delete-default-bin hide-bin"
-              src="./images/delete.png"
-              alt="delete"
-            />
-          </div>
-        </div>
         <div id="projects"></div>
         <button id="add-project">＋ Add Project</button>
         <form action="/" method="get" id="project-input" class="hide-btn-input">
@@ -40,6 +22,7 @@
         </form>
       </nav>
       <div class="tasks-area">
+        <h2 class="list-title"></h2>
         <div class="tasks"></div>
         <button class="add-task">＋ Add Task</button>
         <form class="task-input hide-btn-input" action="/" method="get">
