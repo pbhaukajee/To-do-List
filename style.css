@@ -44,7 +44,7 @@ main {
 
 /* nav bar */
 
-nav {
+#project-content {
   padding: 20px;
   width: 18vw;
   height: 100vh;
@@ -63,7 +63,7 @@ button {
   width: 100px;
 }
 
-#add-project {
+.addProjectBtn {
   width: 150px;
 }
 
@@ -72,12 +72,7 @@ img {
   height: 25px;
 }
 
-.project-list {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  font-size: 20px;
+.project-select {
   cursor: pointer;
 }
 
@@ -90,8 +85,8 @@ input {
   margin-top: 10px;
 }
 
-.hide-btn-input,
-.hide-add-project,
+.hide-input,
+.hide-btn-active,
 .hide-add-task {
   display: none;
 }
@@ -105,19 +100,19 @@ p {
   opacity: 0;
 }
 
-.project-list:hover .hide-bin {
+.project-select:hover .hide-bin {
   opacity: 1;
 }
 
-.task-list:hover .hide-cross {
+.todo-item:hover .hide-cross {
   opacity: 1;
 }
 
-.tasks-area {
+#main-content {
   width: 82vw;
 }
 
-.add-task {
+.add-task-btn {
   margin: 30px;
   font-weight: bold;
   font-size: 16px;
@@ -127,25 +122,26 @@ p {
 }
 
 /* task area */
-.task-input {
+#display-add-task {
   padding-left: 80px;
   padding-top: 50px;
 }
 
 .flex-div {
   display: flex;
-  gap: 15px;
+  justify-content: space-between;
+  margin-top: 15px;
 }
 
-.input-task {
+.add-task-input {
   width: 500px;
 }
 
-.tasks {
+.todo-list {
   margin-top: 50px;
 }
 
-.task-list {
+.todo-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -172,10 +168,7 @@ p {
   width: 15px;
 }
 
-input[type="checkbox"] {
-  accent-color: green;
-}
-
-.active-list {
-  color: red;
+.list-title {
+  margin: 20px 0px -20px 20px;
+  text-decoration: underline;
 }
