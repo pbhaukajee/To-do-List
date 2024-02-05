@@ -10,39 +10,40 @@
     <header>
       <h1>To Do List</h1>
     </header>
-    <main>
-      <nav>
+
+    <main class="main">
+      <div id="project-content">
         <h2>Projects</h2>
-        <div id="projects"></div>
-        <button id="add-project">＋ Add Project</button>
-        <form action="/" method="get" id="project-input" class="hide-btn-input">
-          <input type="text" id="project-name" />
-          <button id="add">Add</button>
-          <button id="cancel">Cancel</button>
-        </form>
-      </nav>
-      <div class="tasks-area">
+        <div id="project-list"></div>
+        <button class="addProjectBtn" type="button">＋ Add Project</button>
+        <div id="display-add-project" class="hide-input">
+          <input type="text" class="add-project-input" />
+          <button class="project-add-btn">Add</button>
+          <button class="project-cancel-btn">Cancel</button>
+        </div>
+      </div>
+      <div id="main-content">
         <h2 class="list-title"></h2>
-        <div class="tasks"></div>
-        <button class="add-task">＋ Add Task</button>
-        <form class="task-input hide-btn-input" action="/" method="get">
-          <div class="flex-div">
-            <input class="input-task" type="text" id="task-name" />
-            <select name="priority" id="priority">
-              <optgroup label="Priority">
-                <option>Low</option>
-                <option>High</option>
+        <div class="todo-list"></div>
+        <button class="add-task-btn hide-btn-active">＋ Add Task</button>
+        <div id="display-add-task" class="hide-input">
+          <div class="task-input">
+            <input class="add-task-input" type="text" />
+            <select name="priority" class="priority">
+              <optgroup label="priority">
+                <option>low</option>
+                <option>high</option>
               </optgroup>
             </select>
-            <input type="date" id="date" />
+            <input type="date" class="task-due-date" />
           </div>
-          <div class="flex-div">
-            <button id="add-t">Add</button>
-            <button id="cancel-t">Cancel</button>
+          <div class="task-input">
+            <button class="task-add-btn">Add</button>
+            <button class="task-cancel-btn">Cancel</button>
           </div>
-        </form>
+        </div>
       </div>
     </main>
-    <script src="main.js"></script>
+    <script defer src="main.js"></script>
   </body>
 </html>
