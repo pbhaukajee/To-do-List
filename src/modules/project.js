@@ -2,7 +2,7 @@ import * as dom from "./dom.js";
 import * as storage from "./storage.js";
 import * as task from "./tasks.js";
 
-//Step1
+
 let projectList = [];
 
 function getLocalStorage() {
@@ -16,7 +16,7 @@ function getLocalStorage() {
   return projectList;
 }
 
-//Step2
+
 function CreateProject(title) {
   const task = [];
   return {
@@ -25,7 +25,7 @@ function CreateProject(title) {
   };
 }
 
-//Step3
+
 function addProject(title) {
   const project = CreateProject(title);
   projectList.push(project);

@@ -1,8 +1,6 @@
 import * as project from "./project.js";
 import * as task from "./tasks.js";
-import * as dom from "./dom.js";
 
-//Step4
 function saveProjectToLocalStorage() {
   const projects = project.projectList;
   const projectListInJSON = JSON.stringify(projects);
@@ -23,7 +21,6 @@ function deleteTodo(projectIndex, taskIndex) {
 }
 
 function getLocalStorage() {
-  // retreieve data
   let storageProjectList = localStorage.getItem("projectList");
   let storageProjects = JSON.parse(storageProjectList);
   return storageProjects;

@@ -10,7 +10,7 @@ function changeCurrentProjectIndex(index) {
   currentProjectIndex = index;
 }
 
-//step5
+
 const addProjectBtn = document.querySelector(".addProjectBtn");
 const displayAddProject = document.querySelector("#display-add-project");
 
@@ -22,7 +22,6 @@ function showProjectForm() {
   hideTaskForm();
 }
 
-//step6
 const projectCancelBtn = document.querySelector(".project-cancel-btn");
 projectCancelBtn.addEventListener("click", () => hideProjectForm());
 function hideProjectForm() {
@@ -31,7 +30,7 @@ function hideProjectForm() {
   addProjectBtn.classList.remove("hide-btn-active");
 }
 
-//Step7
+
 const projectAddBtn = document.querySelector(".project-add-btn");
 const projectInput = document.querySelector(".add-project-input");
 projectAddBtn.addEventListener("click", () => addProjectForm());
@@ -43,13 +42,13 @@ function addProjectForm() {
   projectInput.value = "";
 }
 
-//step8
+
 function clearProjectDisplay() {
   const projectListContainer = document.querySelector("#project-list");
   projectListContainer.textContent = "";
 }
 
-//Step9
+
 function renderProjects() {
   clearProjectDisplay();
   const projectListContainer = document.querySelector("#project-list");
@@ -62,7 +61,7 @@ function renderProjects() {
   listenForProjectClick();
 }
 
-//Step10
+
 function listenForProjectClick() {
   const projectButtons = document.querySelectorAll(".project-select");
   projectButtons.forEach((button) => {
@@ -70,7 +69,7 @@ function listenForProjectClick() {
   });
 }
 
-//Step11
+
 function handleProjectClick(e) {
   const listTitle = document.querySelector(".list-title");
   listTitle.textContent = e.target.innerText;
