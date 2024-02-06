@@ -1,6 +1,5 @@
 import * as project from "./project.js";
 import * as task from "./tasks.js";
-import * as dom from "./dom.js";
 
 //Step4
 function saveProjectToLocalStorage() {
