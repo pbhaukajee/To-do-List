@@ -1,6 +1,8 @@
 import * as project from "./project.js";
 import * as storage from "./storage.js";
 import * as task from "./tasks.js";
+import DeleteImg from "../images/delete.png";
+import CrossImg from "../images/cross.png";
 
 let currentProjectIndex = 0;
 
@@ -54,7 +56,7 @@ function renderProjects() {
 
   project.projectList.forEach((project, index) => {
     projectListContainer.innerHTML += `<div class="project-select flex-div" data-project-index="${index}">
-        <p class="project-select data-project-index="${index}">${project.title}<p><img src=./images/delete.png alt="delete-bin" class="delete-bin hide-bin">`;
+        <p class="project-select" data-project-index="${index}">${project.title}<p><img src="${DeleteImg}" alt="delete-bin" class="delete-bin hide-bin">`;
   });
 
   listenForProjectClick();
@@ -152,7 +154,7 @@ function renderTodoList(list) {
     </div>
     <div class="task-right">
     <p class="todo-due-date">${todo.dueDate}</p>
-    <img  class="cross-bin hide-cross" data-task-index="${todoIndex}" src="./images/cross.png" alt="cross" />
+    <img  class="cross-bin hide-cross" data-task-index="${todoIndex}" src="${CrossImg}" alt="crossImg" />
     </div>
   </div>`;
   });
